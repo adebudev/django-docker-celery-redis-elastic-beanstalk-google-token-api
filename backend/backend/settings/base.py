@@ -131,6 +131,15 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'views') # borrar si hay error
 MEDIA_ROOT = os.path.join(BASE_DIR, 'resource/')
 MEDIA_URL = 'http://127.0.0.1:8000/media/'
 
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header'
+        }
+    }
+}
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
