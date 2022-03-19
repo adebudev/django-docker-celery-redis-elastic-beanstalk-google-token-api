@@ -22,6 +22,7 @@ from drf_yasg import openapi
 from django.conf import settings 
 from django.conf.urls.static import static
 
+from apps.users.views import hello
 schema_view = get_schema_view(
    openapi.Info(
       title="Backend API",
@@ -40,4 +41,5 @@ urlpatterns = [
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     path('api/api.json', schema_view.without_ui(cache_timeout=0), name='schema-swagger-ui'),
     path('admin/', admin.site.urls),
+    path('prueba/',hello)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
